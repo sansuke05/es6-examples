@@ -3,15 +3,19 @@
 
 class Person {
     constructor(name) {
-        this.name = name;
+        this._name = name;
     }
 
     sayHello() {
-        console.log(`Hello, I'm ${this.getName()}`);
+        console.log(`Hello, I'm ${this.name}`);
     }
 
-    getName() {
-        return this.name;
+    get name() {
+        return this._name
+    }
+
+    set name(value) {
+        this._name = value
     }
 }
 
